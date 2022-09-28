@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  * Description: Class implementing a K-Means clustering algorithm to a given set of coordinates.
  * The attributes 'num_clusters' and 'initialization' need to be set using the 'setAttributes' method before 'cluster'
- * can be called. Inherits from 'com.GitHub.ClusterAlgorithm'.
+ * can be called. Inherits from 'ClusterAlgorithm'.
  */
 public class KMeans extends ClusterAlgorithm
 {

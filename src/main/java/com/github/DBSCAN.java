@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Description: Class implementing the com.GitHub.DBSCAN clustering algorithm, with 'min_points'
- * and 'epsilon' needing to be set. Inherits from the abstract class 'com.github.ClusterAlgorithm'.
+ * Description: Class implementing the DBSCAN clustering algorithm, with 'min_points'
+ * and 'epsilon' needing to be set. Inherits from the abstract class 'ClusterAlgorithm'.
  */
 public class DBSCAN extends ClusterAlgorithm
 {

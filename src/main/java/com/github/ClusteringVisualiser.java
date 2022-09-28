@@ -50,7 +50,7 @@ public class ClusteringVisualiser
         frame.pack();
         frame.setVisible(true);
 
-        String algorithm_choices[] = { "com.github.clustering_visualiser.DBSCAN", "K-Means" };
+        String algorithm_choices[] = { "DBSCAN", "K-Means" };
         String initialization_choices[] = { "K-Means++", "Random" };
         Integer clusters_choices[] = { 1, 2, 3, 4, 5, 6, 7 };
         Integer points_choices[] = { 1, 2, 3, 4, 5, 6, 7 };
@@ -69,7 +69,7 @@ public class ClusteringVisualiser
         final JLabel min_points_label = new JLabel("Min Points");
         final JLabel epsilon_label = new JLabel("Epsilon");
         
-        algorithm_selection.setSelectedItem("com.github.clustering_visualiser.DBSCAN");
+        algorithm_selection.setSelectedItem("DBSCAN");
 
         // Adds the GUI elements to the panel
         panel.add(points_button);
@@ -105,7 +105,7 @@ public class ClusteringVisualiser
                     num_clusters_label.setVisible(true);
                     num_clusters.setVisible(true);
                 }
-                else if (algorithm_selection.getSelectedItem().equals("com.github.clustering_visualiser.DBSCAN"))
+                else if (algorithm_selection.getSelectedItem().equals("DBSCAN"))
                 {
                     initialization_label.setVisible(false);
                     initialization.setVisible(false);
@@ -154,7 +154,7 @@ public class ClusteringVisualiser
                 frame.add(panel);
 
                 // GUI elements need to be re-defined here for Swing to work correctly
-                String algorithm_choices[] = { "com.github.clustering_visualiser.DBSCAN", "K-Means" };
+                String algorithm_choices[] = { "DBSCAN", "K-Means" };
                 String initialization_choices[] = { "K-Means++", "Random" };
                 Integer clusters_choices[] = { 1, 2, 3, 4, 5, 6, 7 };
                 Integer points_choices[] = { 1, 2, 3, 4, 5, 6, 7 };
@@ -215,7 +215,7 @@ public class ClusteringVisualiser
                 String init_method = initialization.getSelectedItem().toString();
 
                 // Apply the selected clustering algorithm
-                if (chosen_algorithm.equals("com.github.clustering_visualiser.DBSCAN"))
+                if (chosen_algorithm.equals("DBSCAN"))
                 {
                     clustering_algorithm = new DBSCAN();
                     clustering_algorithm.setAttributes(min_points_int, epsilon);
@@ -227,7 +227,7 @@ public class ClusteringVisualiser
                 }
                 else
                 {
-                    System.out.println("Using default com.github.clustering_visualiser.DBSCAN algorithm. ");
+                    System.out.println("Using default DBSCAN algorithm. ");
                     clustering_algorithm = new DBSCAN();
                     clustering_algorithm.setAttributes(min_points_int, Double.parseDouble(epsilon_text.getText()));
                 }
@@ -262,7 +262,7 @@ public class ClusteringVisualiser
                 frame.add(panel);
 
                 // GUI elements need to be re-defined here for Swing to work correctly
-                String algorithm_choices[] = { "com.github.clustering_visualiser.DBSCAN", "K-Means" };
+                String algorithm_choices[] = { "DBSCAN", "K-Means" };
                 String initialization_choices[] = { "K-Means++", "Random" };
                 Integer clusters_choices[] = { 1, 2, 3, 4, 5, 6, 7 };
                 Integer points_choices[] = { 1, 2, 3, 4, 5, 6, 7 };
