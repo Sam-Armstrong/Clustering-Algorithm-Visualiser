@@ -1,15 +1,18 @@
 /*
  * Author: Sam Armstrong
- * Date: Summer 2021
- * 
- * Description: Class implementing a K-Means clustering algorithm to a given set of coordinates. The attributes 'num_clusters' and
- * 'initialization' need to be set using the 'setAttributes' method before 'cluster' can be called. Inherits from 'ClusterAlgorithm'.
  */
+
+package com.github;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Description: Class implementing a K-Means clustering algorithm to a given set of coordinates.
+ * The attributes 'num_clusters' and 'initialization' need to be set using the 'setAttributes' method before 'cluster'
+ * can be called. Inherits from 'com.GitHub.ClusterAlgorithm'.
+ */
 public class KMeans extends ClusterAlgorithm
 {
     int num_clusters;

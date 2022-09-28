@@ -1,31 +1,32 @@
 /*
  * Author: Sam Armstrong
- * Date: Summer 2021
- * 
- * Description: Unit tests for the project
  */
+
+package com.github;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class UnitTests
+/**
+ * Unit tests for the project
+ */
+public class UnitTests
 {
-
 	@Test
-	void dbscanAttributesTest() 
+	public void dbscanAttributesTest()
 	{
 		DBSCAN dbscan = new DBSCAN();
 		dbscan.setAttributes(2, 80.0);
-		Assert.assertTrue(dbscan.epsilon == 80.0);
-		Assert.assertTrue(dbscan.min_points == 2);
+		Assert.assertEquals(80.0, dbscan.epsilon, 0.0);
+		Assert.assertEquals(2, dbscan.min_points);
 	}
 	
 	@Test
-	void dbscanCoordinatesEmptyTest() 
+	public void dbscanCoordinatesEmptyTest()
 	{
 		ClusterAlgorithm dbscan = new DBSCAN();
 		List<List<Double>> coordinates = new ArrayList<List<Double>>();
@@ -34,7 +35,7 @@ class UnitTests
 	}
 	
 	@Test
-	void dbscanCoordinatesTest() 
+	public void dbscanCoordinatesTest()
 	{
 		ClusterAlgorithm dbscan = new DBSCAN();
 		List<List<Double>> coordinates = new ArrayList<List<Double>>();
@@ -50,7 +51,7 @@ class UnitTests
 	}
 	
 	@Test
-	void kmeansCoordinatesTest() 
+	public void kmeansCoordinatesTest()
 	{
 		ClusterAlgorithm kmeans = new KMeans();
 		List<List<Double>> coordinates = new ArrayList<List<Double>>();
@@ -66,7 +67,7 @@ class UnitTests
 	}
 	
 	@Test
-	void kmeansClustersNumberTest() 
+	public void kmeansClustersNumberTest()
 	{
 		ClusterAlgorithm kmeans = new KMeans();
 		kmeans.setAttributes(4, "Random");
@@ -86,12 +87,12 @@ class UnitTests
 		// Tests for 4 clusters
 		kmeans.setCoordinates(coordinates);
         List<List<List<Double>>> clusters = kmeans.cluster();
-		Assert.assertTrue(clusters.size() == 4);
+		Assert.assertEquals(4, clusters.size());
 		
 		// Tests for 3 clusters
 		kmeans.setAttributes(3, "Random");
 		clusters = kmeans.cluster();
-		Assert.assertTrue(clusters.size() == 3);
+		Assert.assertEquals(3, clusters.size());
 	}
 
 }
